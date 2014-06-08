@@ -1,0 +1,23 @@
+#!/bin/bash -eu
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+
+# Detect primary cartrigde type
+
+PRIMARY_CART=$(ruby_sdk "primary_cartridge_manifest['Name']")
+
+
+# Remove javaagent option
+
+HOOKS="${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/pre_start_${PRIMARY_CART}
+${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/pre_restart_${PRIMARY_CART}
+${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/pre_reload_${PRIMARY_CART}"
+
+
+# edits the file in place and creates a backup of the old file with .bak. The lines with ${OPENSHIFT_APPD_JAVA_DIR} are deleted
+# in the new file.
+for hook in $HOOKS; do
+  sed -i=.bak "/\${OPENSHIFT_APPD_JAVA_DIR}/d" $hook
+  chmod ugo-x ${hook}.bak 
+done

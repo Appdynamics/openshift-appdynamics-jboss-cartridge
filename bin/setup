@@ -1,0 +1,60 @@
+#!/bin/bash -e
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+case "$1" in
+  -v|--version)
+    version="$2"
+esac
+
+echo "${OPENSHIFT_APPD_JAVA_DIR}AppServerAgent/" > "${OPENSHIFT_APPD_JAVA_DIR}env/OPENSHIFT_APPD_JAVA_AGENT_DIR"
+
+# unzip and copy the AppServerAgent directory into the cartridge's home dir
+unzip ${OPENSHIFT_APPD_JAVA_DIR}versions/${version}/AppServerAgent.zip -d ${OPENSHIFT_APPD_JAVA_AGENT_DIR}
+
+
+#The erb should be processed into controller-info.xml as the .erb files in env dir is processed before bin/setup script is called.
+#(Refer :: http://openshift.github.io/documentation/oo_cartridge_developers_guide.html#erb-processing)
+#Copy and overwrite the processed controller-info.xml into OPENSHIFT_APPD_JAVA_AGENT_DIR/conf/.
+cp -f ${OPENSHIFT_APPD_JAVA_DIR}env/controller-info.xml ${OPENSHIFT_APPD_JAVA_AGENT_DIR}conf/
+
+# Detecting primary cartridge
+PRIMARY_CART=$(ruby_sdk "primary_cartridge_manifest['Name']")
+client_message "The primary cartridge name is: ${PRIMARY_CART}"
+
+case "$PRIMARY_CART" in 
+  jbossas) 
+    client_message "Valid primary cartridge detected."
+    ;;
+  *)
+    # Invalid cartridge type
+    client_error "Invalid primary cartridge: ${PRIMARY_CART}. Valid ones: jbossas"
+    exit 109 
+    ;;
+esac
+
+# Using the hooks for primary cartridge to insert the javaagent options for AppD 
+HOOKS="${OPENSHIFT_REPO_DIR}.openshift/action_hooks/pre_start_${PRIMARY_CART}
+${OPENSHIFT_REPO_DIR}.openshift/action_hooks/pre_restart_${PRIMARY_CART}
+${OPENSHIFT_REPO_DIR}.openshift/action_hooks/pre_reload_${PRIMARY_CART}"
+
+
+for hook in $HOOKS; do
+  client_message "Processing $hook"
+
+  if [ ! -e "$hook" ]; then
+    echo '#!/bin/bash' >> $hook
+    chmod 700 $hook
+  fi
+
+  if [ -w "$hook" ]; then
+    echo -e "source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf" >> $hook
+  else
+    client_message "WARNING: The file $hook is not writable."
+  fi
+done
+
+
+client_message "Finished processing the setup script."
+
+exit 0
