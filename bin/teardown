@@ -18,6 +18,6 @@ ${OPENSHIFT_REPO_DIR}.openshift/action_hooks/pre_reload_${PRIMARY_CART}"
 # edits the file in place and creates a backup of the old file with .bak. The lines with ${OPENSHIFT_APPD_JAVA_DIR} are deleted
 # in the new file.
 for hook in $HOOKS; do
-  sed -i=.bak "/\${OPENSHIFT_APPD_JAVA_DIR}/d" $hook
+  sed --in-place=.bak "/\${OPENSHIFT_APPD_JAVA_DIR}/d" $hook
   chmod ugo-x ${hook}.bak 
 done
