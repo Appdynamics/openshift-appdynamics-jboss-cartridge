@@ -7,16 +7,17 @@ case "$1" in
     version="$2"
 esac
 
-echo "${OPENSHIFT_APPD_JAVA_DIR}AppServerAgent/" > "${OPENSHIFT_APPD_JAVA_DIR}env/OPENSHIFT_APPD_JAVA_AGENT_DIR"
+appd_agent_dir = "${OPENSHIFT_APPD_JAVA_DIR}AppServerAgent/"
+echo "${appd_agent_dir}" > "${OPENSHIFT_APPD_JAVA_DIR}env/OPENSHIFT_APPD_AGENT_DIR"
 
 # unzip and copy the AppServerAgent directory into the cartridge's home dir
-unzip ${OPENSHIFT_APPD_JAVA_DIR}versions/${version}/AppServerAgent.zip -d ${OPENSHIFT_APPD_JAVA_DIR}AppServerAgent/
+unzip ${OPENSHIFT_APPD_JAVA_DIR}versions/${version}/AppServerAgent.zip -d ${appd_agent_dir}
 
 
 #The erb should be processed into controller-info.xml as the .erb files in env dir is processed before bin/setup script is called.
 #(Refer :: http://openshift.github.io/documentation/oo_cartridge_developers_guide.html#erb-processing)
-#Copy and overwrite the processed controller-info.xml into OPENSHIFT_APPD_JAVA_AGENT_DIR/conf/.
-cp -f ${OPENSHIFT_APPD_JAVA_DIR}env/controller-info.xml ${OPENSHIFT_APPD_JAVA_AGENT_DIR}conf/
+#Copy and overwrite the processed controller-info.xml into OPENSHIFT_APPD_AGENT_DIR/conf/.
+cp -f ${OPENSHIFT_APPD_JAVA_DIR}env/controller-info.xml ${appd_agent_dir}conf/
 
 # Detecting primary cartridge
 PRIMARY_CART=$(ruby_sdk "primary_cartridge_manifest['Name']")
