@@ -10,7 +10,7 @@ esac
 echo "${OPENSHIFT_APPD_JAVA_DIR}AppServerAgent/" > "${OPENSHIFT_APPD_JAVA_DIR}env/OPENSHIFT_APPD_JAVA_AGENT_DIR"
 
 # unzip and copy the AppServerAgent directory into the cartridge's home dir
-unzip ${OPENSHIFT_APPD_JAVA_DIR}versions/${version}/AppServerAgent.zip -d ${OPENSHIFT_APPD_JAVA_AGENT_DIR}
+unzip ${OPENSHIFT_APPD_JAVA_DIR}versions/${version}/AppServerAgent.zip -d ${OPENSHIFT_APPD_JAVA_DIR}AppServerAgent/
 
 
 #The erb should be processed into controller-info.xml as the .erb files in env dir is processed before bin/setup script is called.
