@@ -44,7 +44,7 @@ Cart-Data:
 Publishes:
 Subscribes:  
 Endpoints:
-Source-Url:
+Source-Url: https://github.com/Appdynamics/openshift-appdynamics-java-appserver-cartridge.git
 Scaling:
   Min: 1
   Max: -1
