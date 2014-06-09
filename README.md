@@ -4,7 +4,8 @@ This OpenShift embedded/plugin cartridge will enable AppDynamics monitoring on J
 
 ## Install ##
 
-rhc add-cartridge -a <app_name> \
+```
+	rhc add-cartridge -a <app_name> \
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_HOST=<appd_contr_host> \
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_PORT=<appd_contr_port> \ 
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_APP_NAME=<appd_app_name> \ 
@@ -13,12 +14,16 @@ rhc add-cartridge -a <app_name> \
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_SSL_ENABLED=<true/false>\
 				  -c https://raw.githubusercontent.com/Appdynamics/openshift-appdynamics-java-appserver-cartridge/master/metadata/manifest.yml
 
+```
 
 Restart your application 
 
- rhc app restart <your_app_name>
-
+```
+	rhc app restart <your_app_name>
+```
 
 ## Remove ##
 
-rhc cartridge-remove appdynamics-java-appserver-agent -a <app_name>
+```
+	rhc cartridge-remove appdynamics-java-appserver-agent -a <app_name>
+```
