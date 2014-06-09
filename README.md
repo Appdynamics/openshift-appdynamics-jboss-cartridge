@@ -1,5 +1,24 @@
-# OpenShift Mock Cartridge
+# openshift-appdynamics-java-appserver-cartridge 
 
-This is a mock implementation of the [OpenShift Cartridge API](http://openshift.github.io/documentation/oo_cartridge_developers_guide.html) which is used to test the OpenShift node platform functionality. The mock cartridges maintains a store of what actions have been performed and provides methods to test for those actions.  
+This OpenShift embedded/plugin cartridge will enable AppDynamics monitoring on JBoss 7 Java applications. It will install AppDynamics AppServer Agent on the gear and will report metrics to the configured AppDynamics controller.
 
-This cartridge was intentionally omitted from the [OpenShift Cartridge Guide](http://openshift.github.io/documentation/oo_cartridge_guide.html).
+## Install ##
+
+rhc add-cartridge -a <app_name> \
+				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_HOST=<appd_contr_host> \
+				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_PORT=<appd_contr_port> \ 
+				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_APP_NAME=<appd_app_name> \ 
+				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_TIER_NAME=<appd_tier_name> \
+				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_NODE_NAME=<appd_node_name> \
+				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_SSL_ENABLED=<true/false>\
+				  -c https://raw.githubusercontent.com/Appdynamics/openshift-appdynamics-java-appserver-cartridge/master/metadata/manifest.yml
+
+
+Restart your application 
+
+ rhc app restart <your_app_name>
+
+
+## Remove ##
+
+rhc cartridge-remove appdynamics-java-appserver-agent -a <app_name>
