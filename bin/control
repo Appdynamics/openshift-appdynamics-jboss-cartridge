@@ -30,7 +30,7 @@ function start {
 	    ;;
 	esac
 
-	source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf
+	source ${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf
 
 	client_result "AppDynamics cartridge is started"
 }
