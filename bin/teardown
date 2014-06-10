@@ -21,3 +21,5 @@ for hook in $HOOKS; do
   sed --in-place=.bak "/\${OPENSHIFT_APPD_JAVA_DIR}/d" $hook
   chmod ugo-x ${hook}.bak 
 done
+
+client_message "The AppDynamics Cartridge is removed."
