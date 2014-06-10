@@ -24,6 +24,8 @@ Restart your application
 	rhc app restart <your_app_name>
 ```
 
+The application has to be restarted either by using the above restart command or by pushing code which would inherently restart the application. 
+
 ## Remove ##
 
 ```
