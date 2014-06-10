@@ -6,10 +6,43 @@ function status {
   client_result "AppDynamics Java AppServerAgent is enabled."
 }
 
+function start {
+	client_result "AppDynamics cartridge is getting enabled"
+	# Detecting primary cartridge
+	PRIMARY_CART=$(ruby_sdk "primary_cartridge_manifest['Name']")
+
+	client_message "The primary cartridge name is: ${PRIMARY_CART}"
+
+	case "$PRIMARY_CART" in 
+	  jbossas) 
+	    client_message "Valid primary cartridge detected - jbossas."
+	    ;;
+	  jbosseap)
+	    client_message "Valid primary cartridge detected - jbosseap."
+	    ;;
+	  jbossews)
+	    client_message "Valid primary cartridge detected - jbossews."
+	    ;;
+	  *)
+	    # Invalid cartridge type
+	    client_error "Invalid primary cartridge: ${PRIMARY_CART}. Valid ones: jbossas,jbosseap,jbossews"
+	    exit 109 
+	    ;;
+	esac
+
+	source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf
+
+	client_result "AppDynamics cartridge is started"
+}
 
 case "$1" in
-  status)               status ;;
-  *)           exit 0
+  start)
+    start
+  status)               
+    status 
+    ;;
+  *)        
+    exit 0
 esac
 
 exit 0
