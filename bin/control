@@ -3,7 +3,7 @@
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 function status {
-  client_result "AppDynamics Java AppServerAgent is enabled."
+  client_result "AppDynamics JBOSS cartridge is enabled."
 }
 
 
@@ -54,7 +54,7 @@ function start {
 	done
 
 
-	client_message "AppDynamics cartridge is started"
+	client_message "AppDynamics JBOSS cartridge is started."
 }
 
 

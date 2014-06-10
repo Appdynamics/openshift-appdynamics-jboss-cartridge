@@ -22,4 +22,4 @@ for hook in $HOOKS; do
   chmod ugo-x ${hook}.bak 
 done
 
-client_message "The AppDynamics Cartridge is removed."
+client_message "The AppDynamics JBOSS Cartridge is removed."

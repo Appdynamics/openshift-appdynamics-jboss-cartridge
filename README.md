@@ -1,4 +1,4 @@
-# openshift-appdynamics-java-appserver-cartridge 
+# openshift-appdynamics-jboss-cartridge 
 
 This OpenShift embedded/plugin cartridge will enable AppDynamics monitoring on JBoss 7 Java applications. It will install AppDynamics AppServer Agent on the gear and will report metrics to the configured AppDynamics controller.
 
@@ -14,7 +14,7 @@ Make sure you have the ports enabled for SSL and non-ssl configurations.
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_TIER_NAME=<appd_tier_name> \
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_NODE_NAME=<appd_node_name> \
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_SSL_ENABLED=<true/false>\
-				  -c https://raw.githubusercontent.com/Appdynamics/openshift-appdynamics-java-appserver-cartridge/master/metadata/manifest.yml
+				  -c https://raw.githubusercontent.com/Appdynamics/openshift-appdynamics-jboss-cartridge/master/metadata/manifest.yml
 
 ```
 

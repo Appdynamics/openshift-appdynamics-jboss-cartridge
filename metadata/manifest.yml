@@ -1,8 +1,8 @@
 ---
-Name: appdynamics-java-appserver-agent
+Name: appdynamics-jboss-cart
 Cartridge-Short-Name: APPD_JAVA
-Display-Name: AppDynamics Java Cartridge 0.1
-Description: An appdynamics cartridge to publishes metrics for your application to your AppDynamics controller.
+Display-Name: AppDynamics JBOSS Cartridge 0.1
+Description: "An appdynamics cartridge to publishes metrics for your Jboss (AS,EAP,EWS) application to the AppDynamics controller."
 Version: '3.8.2'
 Versions:
 - '3.8.2'
@@ -44,7 +44,7 @@ Cart-Data:
 Publishes:
 Subscribes:  
 Endpoints:
-Source-Url: https://github.com/Appdynamics/openshift-appdynamics-java-appserver-cartridge.git
+Source-Url: https://github.com/Appdynamics/openshift-appdynamics-jboss-cartridge.git
 Scaling:
   Min: 1
   Max: -1
