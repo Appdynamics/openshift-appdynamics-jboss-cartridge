@@ -35,6 +35,16 @@ function start {
 	client_result "AppDynamics cartridge is started"
 }
 
+
+function build {
+	client_result "In cartridge build"
+}
+
+
+function deploy {
+	client_result "In cartridge deploy"
+}
+
 case "$1" in
   start)
     start
@@ -42,6 +52,12 @@ case "$1" in
   status)               
     status 
     ;;
+  build)
+    build
+    ;;
+  deploy)
+	deploy
+	;;
   *)        
     exit 0
 esac
