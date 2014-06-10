@@ -6,7 +6,11 @@ function status {
   client_result "AppDynamics Java AppServerAgent is enabled."
 }
 
+
+# control start is called when the cartridge is added by add-cartridge as well as when code is pushed to git.
+# It is creating hooks in the application's .openshift directory that gets executed when the primary cartridge starts/restarts/reloads
 function start {
+
 	#Detecting primary cartridge
 	PRIMARY_CART=$(ruby_sdk "primary_cartridge_manifest['Name']")
 	client_message "The primary cartridge name is: ${PRIMARY_CART}"
@@ -54,14 +58,7 @@ function start {
 }
 
 
-function build {
-	client_message "In cartridge build"
-}
 
-
-function deploy {
-	client_message "In cartridge deploy"
-}
 
 case "$1" in
   start)
@@ -70,12 +67,6 @@ case "$1" in
   status)               
     status 
     ;;
-  build)
-    build
-    ;;
-  deploy)
-	deploy
-	;;
   *)        
     exit 0
 esac
