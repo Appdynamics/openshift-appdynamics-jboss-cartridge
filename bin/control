@@ -38,6 +38,7 @@ function start {
 case "$1" in
   start)
     start
+    ;;
   status)               
     status 
     ;;
