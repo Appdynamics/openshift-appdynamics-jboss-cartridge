@@ -7,7 +7,7 @@ function status {
 }
 
 function start {
-	client_result "AppDynamics cartridge is getting enabled"
+	client_result "AppDynamics cartridge is starting"
 	# Detecting primary cartridge
 	PRIMARY_CART=$(ruby_sdk "primary_cartridge_manifest['Name']")
 
