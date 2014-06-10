@@ -1,6 +1,6 @@
 # openshift-appdynamics-jboss-cartridge 
 
-This OpenShift embedded/plugin cartridge will enable AppDynamics monitoring on JBoss 7 Java applications. It will install AppDynamics AppServer Agent on the gear and will report metrics to the configured AppDynamics controller.
+This OpenShift embedded/plugin cartridge will enable AppDynamics monitoring on JBoss AS, JBoss EAP, JBoss EWS applications. It will install AppDynamics AppServer Agent on the gear and will report metrics to the configured AppDynamics controller.
 
 ## Install ##
 
