@@ -17,7 +17,7 @@
     <!-- This specifies if the AppDynamics agent should use SSL(HTTPS) to connect to the Controller. If you set this to true,
     the controller port property above should be set to the HTTPs port of the Controller.
     This can be overridden with the system property '-Dappdynamics.controller.ssl.enabled' -->
-    <controller-ssl-enabled><%= ENV['OPENSHIFT_APPD_JAVA_CONTROLLER_SSL_ENABLED'] || false%></controller-ssl-enabled>
+    <controller-ssl-enabled><%= ENV['OPENSHIFT_APPD_JAVA_CONTROLLER_SSL_ENABLED'] || false %></controller-ssl-enabled>
     
     <!-- Specify the logical business application name that this jvm node belongs to.
     Note that this is not the deployment name(ear/war/jar) on the application server.
