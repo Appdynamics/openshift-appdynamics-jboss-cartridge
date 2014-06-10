@@ -4,6 +4,8 @@ This OpenShift embedded/plugin cartridge will enable AppDynamics monitoring on J
 
 ## Install ##
 
+Make sure you have the ports enabled for SSL and non-ssl configurations.
+
 ```
 	rhc add-cartridge -a <app_name> \
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_HOST=<appd_contr_host> \

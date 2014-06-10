@@ -25,11 +25,17 @@ client_message "The primary cartridge name is: ${PRIMARY_CART}"
 
 case "$PRIMARY_CART" in 
   jbossas) 
-    client_message "Valid primary cartridge detected."
+    client_message "Valid primary cartridge detected - jbossas."
+    ;;
+  jbosseap)
+    client_message "Valid primary cartridge detected - jbosseap."
+    ;;
+  jbossews)
+    client_message "Valid primary cartridge detected - jbossews."
     ;;
   *)
     # Invalid cartridge type
-    client_error "Invalid primary cartridge: ${PRIMARY_CART}. Valid ones: jbossas"
+    client_error "Invalid primary cartridge: ${PRIMARY_CART}. Valid ones: jbossas,jbosseap,jbossews"
     exit 109 
     ;;
 esac
