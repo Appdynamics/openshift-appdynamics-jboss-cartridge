@@ -4,11 +4,11 @@ This OpenShift embedded/plugin cartridge will enable AppDynamics monitoring on J
 
 ## Install ##
 
-Make sure you have the ports enabled for SSL and non-ssl configurations.
+Make sure you have the ports enabled for SSL and non-ssl configurations. Also,  OPENSHIFT_JBOSS_TYPE should be either jbossas or jbossews or jbosseap, depending on the jboss that you are using.
 
 ```
 	rhc add-cartridge -a <app_name> \
-	              -e OPENSHIFT_JBOSS_TYPE=jbossas
+	              -e OPENSHIFT_JBOSS_TYPE=jbossas/jbossews/jbosseap
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_HOST=<appd_contr_host> \
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_PORT=<appd_contr_port> \ 
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_APP_NAME=<appd_app_name> \ 
