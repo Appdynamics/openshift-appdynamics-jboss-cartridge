@@ -3,6 +3,7 @@
 This OpenShift embedded/plugin cartridge will enable AppDynamics monitoring on JBoss AS, JBoss EAP, JBoss EWS applications. It will install AppDynamics AppServer Agent on the gear and will report metrics to the configured AppDynamics controller.
 
 ## Install ##
+Once you have created a Jboss application (AS,EAP or EWS only) either through the OpenShift Web or RHC command line util, please follow the next step to add the jboss appDynamics cartridge. 
 
 Make sure you have the ports enabled for SSL and non-ssl configurations. Also,  OPENSHIFT_JBOSS_TYPE should be either jbossas or jbossews or jbosseap, depending on the jboss that you are using.
 
@@ -27,7 +28,7 @@ The application has to be restarted either by using the above restart command or
 	rhc app restart <app_name>
 ```
 
-
+Make sure you have the ports enabled for SSL and non-ssl configurations.
 
 ## Remove ##
 
