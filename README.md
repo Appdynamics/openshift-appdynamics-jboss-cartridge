@@ -14,11 +14,12 @@ Make sure you have the ports enabled for SSL and non-ssl configurations.
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_PORT=<appd_contr_port> \ 
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_APP_NAME=<appd_app_name> \ 
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_TIER_NAME=<appd_tier_name> \
-				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_NODE_NAME=<appd_node_name> \
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_SSL_ENABLED=<true/false>\
 				  -c https://raw.githubusercontent.com/Appdynamics/openshift-appdynamics-jboss-cartridge/master/metadata/manifest.yml
 
 ```
+
+Please note that the AppDynamics NodeName will be picked up as the Gear UUID.
 
 The application has to be restarted either by using the above restart command or by pushing code which would inherently restart the application. 
 

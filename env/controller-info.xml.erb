@@ -40,7 +40,7 @@
     The value specified in this xml can be overridden with the system property '-Dappdynamics.agent.nodeName'.
     You may also use expressions as ${server.name}_${host.name}.MyNode to define the node name.
     -->
-    <node-name><%= ENV['OPENSHIFT_APPD_JAVA_CONTROLLER_NODE_NAME'] %></node-name>
+    <node-name></node-name>
     
     <!-- Refers to the runtime directory for all runtime files (logs, transaction configuration) for agent nodes using this agent
     installation. The property is optional, by default set to agent-installation-directory . If specified All Agent logs are written
