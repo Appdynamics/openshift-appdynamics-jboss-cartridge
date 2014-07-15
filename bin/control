@@ -15,19 +15,19 @@ function start {
 	PRIMARY_CART=$(ruby_sdk "primary_cartridge_manifest['Name']")
 	client_message "The primary cartridge name is: ${PRIMARY_CART}"
 
-	case "$PRIMARY_CART" in 
+	case "$OPENSHIFT_JBOSS_TYPE" in 
 	  jbossas) 
-	    client_message "Valid primary cartridge detected - jbossas."
+	    client_message "Valid primary cartridge detected for - jbossas."
 	    ;;
 	  jbosseap)
-	    client_message "Valid primary cartridge detected - jbosseap."
+	    client_message "Valid primary cartridge detected for - jbosseap."
 	    ;;
 	  jbossews)
-	    client_message "Valid primary cartridge detected - jbossews."
+	    client_message "Valid primary cartridge detected for - jbossews."
 	    ;;
 	  *)
 	    # Invalid cartridge type
-	    client_error "Invalid primary cartridge: ${PRIMARY_CART}. Valid ones: jbossas,jbosseap,jbossews"
+	    client_error "Invalid primary cartridge: ${PRIMARY_CART}. Check the value of OPENSHIFT_JBOSS_TYPE. Valid ones: jbossas,jbosseap,jbossews"
 	    exit 109 
 	    ;;
 	esac
@@ -47,7 +47,7 @@ function start {
 	  fi
 
 	  if [ -w "$hook" ]; then
-	    echo -e "source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf" >> $hook
+	    echo -e "source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${OPENSHIFT_JBOSS_TYPE}.conf" >> $hook
 	  else
 	    client_message "WARNING: The file $hook is not writable."
 	  fi

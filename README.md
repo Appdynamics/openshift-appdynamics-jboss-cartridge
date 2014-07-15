@@ -8,6 +8,7 @@ Make sure you have the ports enabled for SSL and non-ssl configurations.
 
 ```
 	rhc add-cartridge -a <app_name> \
+	              -e OPENSHIFT_JBOSS_TYPE=jbossas
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_HOST=<appd_contr_host> \
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_PORT=<appd_contr_port> \ 
 				  -e OPENSHIFT_APPD_JAVA_CONTROLLER_APP_NAME=<appd_app_name> \ 
