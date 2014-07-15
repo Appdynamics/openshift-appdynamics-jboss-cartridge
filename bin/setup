@@ -21,8 +21,8 @@ client_message "Unzipped latest version of AppServerAgent from versions director
 #The erb should be processed into controller-info.xml as the .erb files in env dir is processed before bin/setup script is called.
 #(Refer :: http://openshift.github.io/documentation/oo_cartridge_developers_guide.html#erb-processing)
 #Copy and overwrite the processed controller-info.xml into OPENSHIFT_APPD_AGENT_DIR/conf/.
-cp -f ${OPENSHIFT_APPD_JAVA_DIR}env/controller-info.xml ${appd_agent_dir}conf/
-client_message "Processed the controller-info.erb file"
+#cp -f ${OPENSHIFT_APPD_JAVA_DIR}env/controller-info.xml ${appd_agent_dir}conf/
+#client_message "Processed the controller-info.erb file"
 
 client_message "Finished processing the setup script."
 

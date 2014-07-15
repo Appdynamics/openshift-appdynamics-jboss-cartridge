@@ -17,28 +17,22 @@ Categories:
 Provides:
 - javaagent
 Cart-Data:
-- Key: OPENSHIFT_APPD_JAVA_CONTROLLER_HOST
+- Key: APPDYNAMICS_CONTROLLER_HOST_NAME
   Type: environment
   Description: This is the host name or the IP address of the AppDynamics Controller.
-- Key: OPENSHIFT_APPD_JAVA_CONTROLLER_PORT
+- Key: APPDYNAMICS_CONTROLLER_PORT
   Type: environment
   Description: This is the http(s) port of the AppDynamics Controller. 
-- Key: OPENSHIFT_APPD_JAVA_CONTROLLER_SSL_ENABLED
+- Key: APPDYNAMICS_CONTROLLER_SSL_ENABLED
   Type: environment
   Description: This specifies if the AppDynamics agent should use SSL(HTTPS) to connect to the Controller.
-- Key: OPENSHIFT_APPD_JAVA_CONTROLLER_APP_NAME
-  Type: environment
-  Description: Specify the logical business application name that this jvm node belongs to.
-- Key: OPENSHIFT_APPD_JAVA_CONTROLLER_TIER_NAME
+- Key: APPDYNAMICS_AGENT_TIER_NAME
   Type: environment
   Description: Specify the logical business tier name that this jvm node belongs to.
-- Key: OPENSHIFT_APPD_JAVA_CONTROLLER_NODE_NAME
-  Type: environment
-  Description: Specify the logical business node name that this jvm node belongs to.
-- Key: OPENSHIFT_APPD_JAVA_CONTROLLER_ACCOUNT_NAME
+- Key: APPDYNAMICS_AGENT_ACCOUNT_NAME
   Type: environment
   Description: Specify when running in multi-tenant mode or you are using the AppDynamics SaaS Controller.
-- Key: OPENSHIFT_APPD_JAVA_CONTROLLER_ACCOUNT_ACCESS_KEY
+- Key: APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY
   Type: environment
   Description: Specify when running in multi-tenant mode or you are using the AppDynamics SaaS Controller.
 Publishes:
