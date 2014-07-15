@@ -19,6 +19,9 @@ function start {
 	  jbossas) 
 	    client_message "Valid primary cartridge detected - jbossas."
 	    ;;
+	  jbossas-7)
+        client_message "Valid primary cartridge detected - jbossas-7."
+	    ;;
 	  jbosseap)
 	    client_message "Valid primary cartridge detected - jbosseap."
 	    ;;
