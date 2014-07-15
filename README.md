@@ -20,18 +20,20 @@ Make sure you have the ports enabled for SSL and non-ssl configurations. Also,  
 
 ```
 
-The application has to be restarted either by using the above restart command or by pushing code which would inherently restart the application. 
-
-
+Restart your application 
 
 ```
-	rhc app restart <app_name>
+	rhc app restart <your_app_name>
 ```
 
+<<<<<<< HEAD
 Make sure you have the ports enabled for SSL and non-ssl configurations.
+=======
+The application has to be restarted either by using the above restart command or by pushing code which would inherently restart the application. 
+>>>>>>> parent of 8d6f7bc... readme
 
 ## Remove ##
 
 ```
-	rhc cartridge-remove appdynamics-jboss-cart -a <app_name>
+	rhc cartridge-remove appdynamics-java-appserver-agent -a <app_name>
 ```
