@@ -50,3 +50,7 @@ The application has to be restarted either by using the above restart command or
 ```
 	rhc cartridge-remove appdynamics-jboss-cart -a <app_name>
 ```
+
+## Versions Supported ##
+
+AppDynamics AppServerAgent 3.8.4
