@@ -30,7 +30,7 @@ function start {
 	    ;;
 	  *)
 	    # Invalid cartridge type
-	    client_error "Invalid primary cartridge: ${PRIMARY_CART}. Valid ones: jbossas,jbosseap,jbossews"
+	    client_error "Invalid primary cartridge: ${PRIMARY_CART}. Valid ones: jbossas,jbossas-7,jbosseap,jbossews"
 	    exit 109 
 	    ;;
 	esac
