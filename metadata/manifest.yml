@@ -11,8 +11,8 @@ Vendor: Red Hat
 Cartridge-Version: 0.0.1
 Cartridge-Vendor: appdynamics
 Categories:
-- embedded
 - plugin
+- embedded
 - appdynamics
 Provides:
 - javaagent
@@ -36,7 +36,11 @@ Cart-Data:
   Type: environment
   Description: Specify when running in multi-tenant mode or you are using the AppDynamics SaaS Controller.
 Publishes:
-Subscribes:  
+Subscribes:
+Group-Overrides:
+  - components:
+    - web_framework
+    - appdynamics  
 Endpoints:
 Source-Url: https://github.com/Appdynamics/openshift-appdynamics-jboss-cartridge.git
 Scaling:
