@@ -35,10 +35,15 @@ function start {
 	    ;;
 	esac
 
+	HOOKS_ABS_PATH="${OPENSHIFT_REPO_DIR}.openshift/action_hooks/"
+	if [! -d "${HOOKS_ABS_PATH}"]; then
+		mkdir -p $HOOKS_ABS_PATH
+	fi
+
 	# Using the hooks for primary cartridge to insert the javaagent options for AppD 
-	HOOKS="${OPENSHIFT_REPO_DIR}.openshift/action_hooks/pre_start_${PRIMARY_CART}
-	${OPENSHIFT_REPO_DIR}.openshift/action_hooks/pre_restart_${PRIMARY_CART}
-	${OPENSHIFT_REPO_DIR}.openshift/action_hooks/pre_reload_${PRIMARY_CART}"
+	HOOKS="${HOOKS_ABS_PATH}pre_start_${PRIMARY_CART}
+	${HOOKS_ABS_PATH}pre_restart_${PRIMARY_CART}
+	${HOOKS_ABS_PATH}pre_reload_${PRIMARY_CART}"
 
 
 	for hook in $HOOKS; do
