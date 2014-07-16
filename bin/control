@@ -36,7 +36,7 @@ function start {
 	esac
 
 	HOOKS_ABS_PATH="${OPENSHIFT_REPO_DIR}.openshift/action_hooks/"
-	if [! -d "${HOOKS_ABS_PATH}"]; then
+	if [ ! -d "${HOOKS_ABS_PATH}" ]; then
 		mkdir -p $HOOKS_ABS_PATH
 	fi
 
