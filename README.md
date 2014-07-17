@@ -33,7 +33,7 @@ If it is a multi-tenant controller, please pass the accountName and accountKey a
 ```
 Make sure you have the ports opened for SSL (default:8181) and non-ssl (default:8090) configurations.
 
-Please note that the AppDynamics NodeName will be picked up as the Gear UUID and the ApplicationName will be picked up from the user assigned name of the application . 
+Please note that the AppDynamics NodeName will be picked up as the Gear UUID (OPENSHIFT_GEAR_UUID) )and the ApplicationName will be picked up from the user assigned name of the application (OPENSHIFT_APP_NAME).
 
 The application has to be restarted either by using the above restart command or by pushing code which would inherently restart the application. 
 
