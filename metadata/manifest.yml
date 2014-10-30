@@ -26,6 +26,9 @@ Cart-Data:
 - Key: APPDYNAMICS_CONTROLLER_SSL_ENABLED
   Type: environment
   Description: This specifies if the AppDynamics agent should use SSL(HTTPS) to connect to the Controller.
+- Key: APPDYNAMICS_AGENT_APPLICATION_NAME
+  Type: environment
+  Description: Specify the application name that you would want in AppDynamics.
 - Key: APPDYNAMICS_AGENT_TIER_NAME
   Type: environment
   Description: Specify the logical business tier name that this jvm node belongs to.
