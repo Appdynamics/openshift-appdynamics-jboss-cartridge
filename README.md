@@ -38,7 +38,7 @@ If it is a multi-tenant controller, please pass the accountName and accountKey a
 Make sure you have the right ports opened for SSL  and non-ssl  configurations.
 
 
-Please note that the AppDynamics NodeName will be picked up as the Gear UUID.
+Please note that the AppDynamics NodeName will be picked up as the Gear UUID..
 
 
 The application has to be restarted either by using the above restart command or by pushing code which would inherently restart the application. 
