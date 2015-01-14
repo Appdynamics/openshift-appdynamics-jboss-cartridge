@@ -10,7 +10,7 @@ esac
 # The set up script will get executed once when add-cartridge is called. This script will create all the necessary files and directories
 # required by the cartridge.
 
-appd_agent_dir="${OPENSHIFT_APPD_JAVA_DIR}AppServerAgent/AppServerAgent/"
+appd_agent_dir="${OPENSHIFT_APPD_JAVA_DIR}AppServerAgent/"
 echo "${appd_agent_dir}" > "${OPENSHIFT_APPD_JAVA_DIR}env/OPENSHIFT_APPD_AGENT_DIR"
 
 # unzip and copy the AppServerAgent directory into the cartridge's home dir
