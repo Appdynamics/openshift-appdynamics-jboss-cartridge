@@ -45,7 +45,6 @@ Group-Overrides:
     - web_framework
     - appdynamics  
 Endpoints:
-Source-Url: https://github.com/Appdynamics/openshift-appdynamics-jboss-cartridge.git
 Scaling:
   Min: 1
   Max: -1
