@@ -15,7 +15,7 @@ Once you have created a Jboss application (AS,EAP or EWS only) either through th
 				  -e APPDYNAMICS_AGENT_APPLICATION_NAME=<appd_application_name> \
 				  -e APPDYNAMICS_AGENT_TIER_NAME=<appd_tier_name> \
 				  -e APPDYNAMICS_CONTROLLER_SSL_ENABLED=<true/false>\
-				  -c https://raw.githubusercontent.com/Appdynamics/openshift-appdynamics-jboss-cartridge/master/metadata/manifest.yml
+				  -c http://cartreflect-claytondev.rhcloud.com/reflect?github=Appdynamics/openshift-appdynamics-jboss-cartridge
 
 ```
 
@@ -32,7 +32,7 @@ If it is a multi-tenant controller, please pass the accountName and accountKey a
 				  -e APPDYNAMICS_CONTROLLER_SSL_ENABLED=<true/false>\
 				  -e APPDYNAMICS_AGENT_ACCOUNT_NAME=<appd_agent_accountname>
 				  -e APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY=<appd_agent_account_access_key>
-				  -c https://raw.githubusercontent.com/Appdynamics/openshift-appdynamics-jboss-cartridge/master/metadata/manifest.yml
+				  -c http://cartreflect-claytondev.rhcloud.com/reflect?github=Appdynamics/openshift-appdynamics-jboss-cartridge
 
 ```
 Make sure you have the right ports opened for SSL  and non-ssl  configurations.
