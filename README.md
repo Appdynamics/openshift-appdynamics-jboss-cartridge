@@ -21,7 +21,7 @@ Once you have created a Jboss application (AS,EAP or EWS only) either through th
 
 ## SAAS environment ## 
 
-If it is a multi-tenant controller, please pass the accountName and accountKey as well to the above command. 
+If it is a dedicated or a multi-tenant controller, please pass the accountName and accountKey as well to the above command. 
 
 ```
 	rhc add-cartridge -a <app_name> \
