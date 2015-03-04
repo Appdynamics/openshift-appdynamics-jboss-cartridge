@@ -28,6 +28,8 @@ Provides AppDynamics agent cartridge support.
 %files
 %dir %{cartridgedir}
 %{cartridgedir}/metadata
+%{cartridgedir}/conf/*
+%{cartridgedir}/versions/*
 %attr(0755,-,-) %{cartridgedir}/bin/
 %doc %{cartridgedir}/README.md
 %doc %{cartridgedir}/COPYRIGHT
