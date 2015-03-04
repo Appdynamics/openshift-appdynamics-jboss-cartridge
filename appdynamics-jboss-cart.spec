@@ -2,12 +2,12 @@
 
 Summary:       An appdynamics cartridge to publishes metrics for your Jboss (AS,EAP,EWS) application to the AppDynamics controller.
 Name:          appdynamics-jboss-cart
-Version: 1.0.1
+Version: 1.0.3
 Release:       1%{?dist}
 Group:         Applications/Internet
 License:       ASL 2.0
 URL:           http://www.openshift.com
-Source0:       https://github.com/Appdynamics/openshift-appdynamics-jboss-cartridge/archive/master.zip
+Source0:    http://mirror.openshift.com/pub/openshift-origin/source/%{name}/%{name}-%{version}.tar.gz 
 Requires:      rubygem(openshift-origin-node)
 Requires:      openshift-origin-node-util
 BuildArch:     noarch
@@ -34,6 +34,9 @@ Provides AppDynamics agent cartridge support.
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Tue Mar 03 2015 Unknown name 1.0.3-1
+- 
+
 * Tue Mar 03 2015 Unknown name 1.0.1-1
 - new package built with tito
 
