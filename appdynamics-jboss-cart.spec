@@ -2,7 +2,7 @@
 
 Summary:       An appdynamics cartridge to publishes metrics for your Jboss (AS,EAP,EWS) application to the AppDynamics controller.
 Name:          appdynamics-jboss-cart
-Version: 1.0.6
+Version: 1.0.1
 Release:       1%{?dist}
 Group:         Applications/Internet
 License:       ASL 2.0
@@ -39,19 +39,6 @@ Provides AppDynamics agent cartridge support.
 %doc %{cartridgedir}/LICENSE
 
 %changelog
-* Tue Mar 03 2015 Unknown name 1.0.6-1
-- more changed spec file (kunal@myubuntu.(none))
 
-* Tue Mar 03 2015 Unknown name 1.0.5-1
-- more changed spec file (kunal@myubuntu.(none))
-
-* Tue Mar 03 2015 Unknown name 1.0.4-1
-- changed spec file (kunal@myubuntu.(none))
-
-* Tue Mar 03 2015 Unknown name 1.0.3-1
-- 
-
-* Tue Mar 03 2015 Unknown name 1.0.1-1
-- new package built with tito
 
 
