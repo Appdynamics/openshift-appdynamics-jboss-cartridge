@@ -29,7 +29,7 @@ Provides AppDynamics agent cartridge support.
 %dir %{cartridgedir}
 %{cartridgedir}/metadata
 %{cartridgedir}/versions
-%{cartridgedir}/env
+#%{cartridgedir}/env
 %{cartridgedir}/template
 %{cartridgedir}/usr
 %attr(0755,-,-) %{cartridgedir}/bin/
