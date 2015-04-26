@@ -45,6 +45,7 @@ function start {
 	${HOOKS_ABS_PATH}pre_restart_${PRIMARY_CART}
 	${HOOKS_ABS_PATH}pre_reload_${PRIMARY_CART}"
 
+	CONF_COMMAND="source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf"
 
 	for hook in $HOOKS; do
 	  client_message "Processing $hook"
@@ -55,11 +56,10 @@ function start {
 	  fi
 
 	  if [ -w "$hook" ]; then
-	  	client_message "Finding string..."
-	  	if grep -Fxq "source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf" "$hook" ; then
-	    	client_message "The cartridge config already exists."
+	  	if grep -Fxq "$CONF_COMMAND" "$hook" ; then
+	    	client_message "The cartridge config command already exists."
 	  	else
-	  		echo -e "source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf" >> $hook
+	  		echo -e "$CONF_COMMAND" >> $hook
 	  	fi	
 	  else
 	    client_message "WARNING: The file $hook is not writable."
