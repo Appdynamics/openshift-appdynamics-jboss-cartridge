@@ -55,8 +55,9 @@ function start {
 	  fi
 
 	  if [ -w "$hook" ]; then
-	  	if [ grep -Fxq "source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf" "$hook" ]; then
-	    	client_message "The cartridge config was already found."
+	  	client_message "Finding string..."
+	  	if grep -Fxq "source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf" "$hook" ; then
+	    	client_message "The cartridge config already exists."
 	  	else
 	  		echo -e "source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf" >> $hook
 	  	fi	
