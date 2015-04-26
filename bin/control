@@ -55,7 +55,11 @@ function start {
 	  fi
 
 	  if [ -w "$hook" ]; then
-	    echo -e "source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf" >> $hook
+	  	if grep -Fxq "source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf" "$hook" then
+	    	
+	  	else
+	  		echo -e "source \${OPENSHIFT_APPD_JAVA_DIR}conf/javaagent_${PRIMARY_CART}.conf" >> $hook
+	  	fi	
 	  else
 	    client_message "WARNING: The file $hook is not writable."
 	  fi
