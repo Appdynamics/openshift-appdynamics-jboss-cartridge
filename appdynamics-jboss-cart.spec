@@ -2,7 +2,7 @@
 
 Summary:       An appdynamics cartridge to publishes metrics for your Jboss (AS,EAP,EWS) application to the AppDynamics controller.
 Name:          appdynamics-jboss-cart
-Version: 1.0.1
+Version: 1.0.2
 Release:       1%{?dist}
 Group:         Applications/Internet
 License:       ASL 2.0
