@@ -59,7 +59,7 @@ function start {
 	  	if grep -Fxq "$CONF_COMMAND" "$hook" ; then
 	    	client_message "The cartridge config command already exists."
 	  	else
-	  		echo -e "$CONF_COMMAND" >> $hook
+	  		echo -e "\n$CONF_COMMAND" >> $hook
 	  	fi	
 	  else
 	    client_message "WARNING: The file $hook is not writable."
