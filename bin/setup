@@ -14,7 +14,7 @@ esac
 
 
 # unzip and copy the AppServerAgent directory into the cartridge's home dir
-unzip ${OPENSHIFT_APPD_JAVA_DIR}versions/${version}/AppServerAgent.zip -d ${OPENSHIFT_APPD_JAVA_DIR}
+unzip ${OPENSHIFT_APPD_JAVA_DIR}versions/${version}/AppServerAgent.zip -d ${OPENSHIFT_APPD_JAVA_DIR}AppServerAgent/
 client_message "Unzipped latest version of AppServerAgent from versions directory to ${OPENSHIFT_APPD_JAVA_DIR}"
 
 client_message "Setting AppServerAgent Directory to ${OPENSHIFT_APPD_JAVA_DIR}AppServerAgent/"
