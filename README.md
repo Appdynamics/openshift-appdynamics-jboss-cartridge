@@ -15,7 +15,7 @@ Once you have created a Jboss application (AS,EAP or EWS only) either through th
 				  -e APPDYNAMICS_AGENT_APPLICATION_NAME=<appd_application_name> \
 				  -e APPDYNAMICS_AGENT_TIER_NAME=<appd_tier_name> \
 				  -e APPDYNAMICS_CONTROLLER_SSL_ENABLED=<true/false>\
-				  -c http://cartreflect-claytondev.rhcloud.com/reflect?github=Appdynamics/openshift-appdynamics-jboss-cartridge
+				  -c http://cartreflect-claytondev.rhcloud.com/github/Appdynamics/openshift-appdynamics-jboss-cartridge
 
 ```
 
