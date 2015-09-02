@@ -32,7 +32,7 @@ If it is a dedicated or a multi-tenant controller, please pass the accountName a
 				  -e APPDYNAMICS_CONTROLLER_SSL_ENABLED=<true/false>\
 				  -e APPDYNAMICS_AGENT_ACCOUNT_NAME=<appd_agent_accountname>
 				  -e APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY=<appd_agent_account_access_key>
-				  -c http://cartreflect-claytondev.rhcloud.com/reflect?github=Appdynamics/openshift-appdynamics-jboss-cartridge
+				  -c http://cartreflect-claytondev.rhcloud.com/github/Appdynamics/openshift-appdynamics-jboss-cartridge
 
 ```
 Make sure you have the right ports opened for SSL  and non-ssl  configurations.
