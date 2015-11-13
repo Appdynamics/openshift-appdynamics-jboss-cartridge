@@ -60,3 +60,16 @@ The application has to be restarted either by using the above restart command or
 ## Versions Supported ##
 
 AppDynamics AppServerAgent 3.8.4,3.9.6,4.1.5,4.1.6
+
+## To geenerate the RPM ##
+
+Use fpm utility
+```
+	git clone https://github.com/jordansissel/fpm
+  	gem install fpm
+```
+Generate version 1.0-3 rpm using fpm
+
+```
+	fpm --iteration=3 -s dir -t rpm -n appdynamics-jboss-cart ~/openshift-appdynamics-jboss-cartridge
+```
