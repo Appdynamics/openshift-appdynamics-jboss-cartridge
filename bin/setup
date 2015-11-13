@@ -2,6 +2,9 @@
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
+# default agent version
+APPDYNAMICS_AGENT_VERSION=4.1.6.0
+
 case "$1" in
   -v|--version)
     version="$2"
@@ -10,11 +13,11 @@ esac
 # The set up script will get executed once when add-cartridge is called. This script will create all the necessary files and directories
 # required by the cartridge.
 
-
-
-
 # unzip and copy the AppServerAgent directory into the cartridge's home dir
-unzip ${OPENSHIFT_APPD_JAVA_DIR}versions/${version}/AppServerAgent.zip -d ${OPENSHIFT_APPD_JAVA_DIR}
+# unzip ${OPENSHIFT_APPD_JAVA_DIR}versions/${version}/AppServerAgent.zip -d ${OPENSHIFT_APPD_JAVA_DIR}
+
+mkdir ${OPENSHIFT_APPD_JAVA_DIR}/AppServerAgent && wget https://packages.appdynamics.com/java/${version}/AppServerAgent-${version}.zip && unzip -d ${OPENSHIFT_APPD_JAVA_DIR}/AppServerAgent AppServerAgent-${version}.zip && rm -fr AppServerAgent-${version}.zip
+
 client_message "Unzipped latest version of AppServerAgent from versions directory to ${OPENSHIFT_APPD_JAVA_DIR}"
 
 client_message "Setting AppServerAgent Directory to ${OPENSHIFT_APPD_JAVA_DIR}AppServerAgent/"

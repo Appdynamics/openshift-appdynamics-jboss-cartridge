@@ -28,7 +28,6 @@ Provides AppDynamics agent cartridge support.
 %files
 %dir %{cartridgedir}
 %{cartridgedir}/metadata
-%{cartridgedir}/versions
 #%{cartridgedir}/env
 %{cartridgedir}/template
 %{cartridgedir}/usr

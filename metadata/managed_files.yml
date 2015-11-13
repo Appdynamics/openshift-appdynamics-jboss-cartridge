@@ -6,8 +6,6 @@ locked_files:
 - metadata/*
 - env/
 - env/*
-- versions/
-- versions/*
 - conf/
 - conf/*
 processed_templates:

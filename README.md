@@ -59,4 +59,4 @@ The application has to be restarted either by using the above restart command or
 
 ## Versions Supported ##
 
-AppDynamics AppServerAgent 3.8.4,3.9.6
+AppDynamics AppServerAgent 3.8.4,3.9.6,4.1.5,4.1.6
