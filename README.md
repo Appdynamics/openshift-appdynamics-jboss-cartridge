@@ -73,3 +73,7 @@ Generate version 1.0-3 rpm using fpm
 ```
 	fpm --iteration=3 -s dir -t rpm -n appdynamics-jboss-cart ~/openshift-appdynamics-jboss-cartridge
 ```
+
+## Upgrade / Downgrade ##
+To use a different version of AppDynamics agent (current default 4.1.6.0 to say, 4.1.5.0) make a fork of
+the repo and change version in metadata/manifest.yml. Use the fork'd repo when adding the cartridge
