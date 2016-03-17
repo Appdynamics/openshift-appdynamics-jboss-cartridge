@@ -3,9 +3,9 @@ Name: appdynamics-jboss-cart
 Cartridge-Short-Name: APPD_JAVA
 Display-Name: AppDynamics JBOSS Cartridge 0.0.3
 Description: "An appdynamics cartridge to publishes metrics for your Jboss (AS,EAP,EWS) application to the AppDynamics controller."
-Version: '4.1.6.0'
+Version: '4.1.8.8'
 Versions:
-- '4.1.6.0'
+- '4.1.8.8'
 License: ASL 2.0
 Vendor: Red Hat
 Cartridge-Version: 0.0.3
