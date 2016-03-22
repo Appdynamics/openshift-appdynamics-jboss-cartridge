@@ -79,7 +79,9 @@ To use a specific version of the AppDynamics agent, follow these steps:
  2. Go to /metadata/manifest.yml and update the agent versions in these two places
  ![AgentVersion](https://github.com/Appdynamics/openshift-appdynamics-jboss-cartridge/blob/master/images/agentVersion.png)
  3. Use -c parameter to point to your forked github repo
-   -c http://cartreflect-claytondev.rhcloud.com/github/{YourGitHubID}/openshift-appdynamics-jboss-cartridge
+
+>    -c http://cartreflect-claytondev.rhcloud.com/github/{YourGitHubID}/openshift-appdynamics-jboss-cartridge
+
  4. Install the cartridge using the above -c parameter
  
 ```
