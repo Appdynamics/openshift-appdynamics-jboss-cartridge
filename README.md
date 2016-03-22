@@ -57,9 +57,6 @@ The application has to be restarted either by using the above restart command or
 	rhc cartridge-remove appdynamics-jboss-cart -a <app_name>
 ```
 
-## Versions Supported ##
-
-AppDynamics AppServerAgent 3.8.4,3.9.6,4.1.5,4.1.6
 
 ## To generate the RPM ##
 
@@ -74,6 +71,24 @@ Generate version 1.0-3 rpm using fpm
 	fpm --iteration=3 -s dir -t rpm -n appdynamics-jboss-cart ~/openshift-appdynamics-jboss-cartridge
 ```
 
-## Upgrade / Downgrade ##
-To use a different version of AppDynamics agent (current default 4.1.6.0 to say, 4.1.5.0) make a fork of
-the repo and change version in metadata/manifest.yml. Use the fork'd repo when adding the cartridge
+## Update Agent Version in this cartridge ##
+
+To use a specific version of the AppDynamics agent, follow these steps:
+
+ 1. Fork this repository in your GitHub account
+ 2. Go to /metadata/manifest.yml and update the agent versions in these two places
+ ![AgentVersion](https://github.com/Appdynamics/openshift-appdynamics-jboss-cartridge/blob/master/images/agentVersion.png)
+ 3. Use -c parameter to point to your forked github repo
+   -c http://cartreflect-claytondev.rhcloud.com/github/{YourGitHubID}/openshift-appdynamics-jboss-cartridge
+ 4. Install the cartridge using the above -c parameter
+ 
+```
+	rhc add-cartridge -a <app_name> \
+				  -e APPDYNAMICS_CONTROLLER_HOST_NAME=<appd_contr_host> \
+				  -e APPDYNAMICS_CONTROLLER_PORT=<appd_contr_port> \ 
+				  -e APPDYNAMICS_AGENT_APPLICATION_NAME=<appd_application_name> \
+				  -e APPDYNAMICS_AGENT_TIER_NAME=<appd_tier_name> \
+				  -e APPDYNAMICS_CONTROLLER_SSL_ENABLED=<true/false>\
+				  -c http://cartreflect-claytondev.rhcloud.com/github/{YourGithubID}/openshift-appdynamics-jboss-cartridge
+
+```
